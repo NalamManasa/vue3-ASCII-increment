@@ -1,9 +1,9 @@
 <template>
   <input
     type="text"
-    class="rounded-md border-1 bg-stone-500 border-slate-400 m-1 px-2 py-1"
+    v-model="localValue"
+    class="rounded-md outline-slate-600 bg-slate-200 m-1 px-2 py-1"
   >
-  <input type="text" v-model="localValue" class="bg-red-600 rounded-md p-2">
 
 </template>
 
@@ -52,40 +52,4 @@ watch(localValue, (value) => {
   emits("update:modelValue", value);
 }
 )
-
-/*
-const string = props.modelValue;
-
-
-for (let index = 0; index < string.length; index++) {
-  //newString =newString + String.fromCharCode(string.charCodeAt(index) + 1);
-}
-
-
-watch(
-  second,
-  (value) => {
-    console.log("here")
-    const string = value;
-    let newString = '';
-    for (let index = 0; index < string.length; index++) {
-      newString = newString + String.fromCharCode(string.charCodeAt(index) + 1);
-    }
-    console.log( newString )
-    second.value = newString
-    
-  }
-)
-
-
-
-  () => props.modelValue,
-  (value) => { 
-    const letters = [...text];
-    console.log(letters)
-    //emits("update:modelValue", incrementedText);
-    emits("update:modelValue", value+"added");
-  }
-*/
-
 </script>
